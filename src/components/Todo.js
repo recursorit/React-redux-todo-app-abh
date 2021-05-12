@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import {RiCloseCircleLine} from 'react-icons/ri'
 import {TiEdit} from 'react-icons/ti'
+import { FiCheckCircle } from "react-icons/fi";
 import { useDispatch } from 'react-redux'
-import { deleteTodo, modalOpen, updateTodo } from '../redux/actions'
+import { modalOpen, updateTodo } from '../redux/actions'
 
 const Todo = ({todo}) => {
     const dispatch = useDispatch()
     const [edit,setEdit]=useState(false)
     const [name, setName] = useState(todo.title)
+    
     return(
         <Container className="px-5">
         <Row className="my-3">
@@ -37,8 +39,8 @@ const Todo = ({todo}) => {
 
                     }}
                  className="mx-2 p-0 border-0"
-                  variant="outline-info">
-                      {edit ? <TiEdit size={28} color={"green"}/> :<TiEdit size={28}/>}
+                  variant="light">
+                      {edit ? <FiCheckCircle size={28} color={"green"}/> :<TiEdit color={"skyblue"} size={28}/>}
                 </Button>
                 <Button onClick={()=>dispatch(modalOpen(todo.id))}
                  className="p-0 border-0"

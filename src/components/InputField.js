@@ -8,11 +8,12 @@ const InputField = () => {
     const [todo,settodo] =useState("")
     const todos = useSelector(state=>state.todo)
     const dispatch = useDispatch()
+    
     return(
         <Container>
         <InputGroup className="my-5 px-5 outline-none ">
             <FormControl 
-            placeholder="Enter Todo here"
+            placeholder="Enter here"
             value={todo}
             onChange={e=>settodo(e.target.value)}
             />

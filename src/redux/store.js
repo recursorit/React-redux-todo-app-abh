@@ -4,9 +4,10 @@ import reducer from './reducer'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
+
 const rootReducer = combineReducers({
     todo:reducer,
-    modalS:modalReducer
+    modalS:modalReducer,
 })
 
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware()))
