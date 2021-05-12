@@ -3,20 +3,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import InputField from './components/InputField';
 import TodoList from './components/TodoList';
-import { Provider } from 'react-redux'
-import store from './redux/store';
+
+import { Container } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 
 function App() {
-  
+  const todos = useSelector(state=>state)
   return (
-    <Provider store={store}>
-    <div className="App">
+    
+    <Container fluid className="App">
       <h2 className="display-3 mt-5">Todo App</h2>
       <InputField />
-      <TodoList />
-    </div>
-    </Provider>
+      {todos ? <TodoList />:null}
+      
+    </Container>
+    
   );
 }
 
