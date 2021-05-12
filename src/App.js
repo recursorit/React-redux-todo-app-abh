@@ -9,13 +9,13 @@ import { useSelector } from 'react-redux';
 
 
 function App() {
-  const todos = useSelector(state=>state)
+  const todos = useSelector(state=>state.todo)
   return (
     
     <Container fluid className="App">
       <h2 className="display-3 mt-5">Todo App</h2>
       <InputField />
-      {todos ? <TodoList />:null}
+      {todos[0] ? <TodoList />:null}
       
     </Container>
     

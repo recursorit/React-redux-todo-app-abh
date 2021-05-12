@@ -3,7 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 import {RiCloseCircleLine} from 'react-icons/ri'
 import {TiEdit} from 'react-icons/ti'
 import { useDispatch } from 'react-redux'
-import { deleteTodo, updateTodo } from '../redux/actions'
+import { deleteTodo, modalOpen, updateTodo } from '../redux/actions'
 
 const Todo = ({todo}) => {
     const dispatch = useDispatch()
@@ -40,7 +40,7 @@ const Todo = ({todo}) => {
                   variant="outline-info">
                       {edit ? <TiEdit size={28} color={"green"}/> :<TiEdit size={28}/>}
                 </Button>
-                <Button onClick={()=>dispatch(deleteTodo(todo.id))}
+                <Button onClick={()=>dispatch(modalOpen(todo.id))}
                  className="p-0 border-0"
                   variant="outline-danger">
                       <RiCloseCircleLine size={28}/>

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const InputField = () => {
     const [todo,settodo] =useState("")
-    const todos = useSelector(state=>state)
+    const todos = useSelector(state=>state.todo)
     const dispatch = useDispatch()
     return(
         <Container>
@@ -24,7 +24,7 @@ const InputField = () => {
                 }));
                 settodo('')}
                 }
-             variant="outline-dark" disabled={!todo}>Button</Button>
+             variant="outline-dark" disabled={!todo}>Add Task</Button>
             </InputGroup.Append>
         </InputGroup>
         </Container>
