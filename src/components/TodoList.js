@@ -16,9 +16,9 @@ const TodoList = () => {
                     return <Todo key={todo.id} todo={todo} />
                 })
             }
-            {/* <Button 
-            onclick={()=>dispatch(deleteall())}
-             variant="outline-danger">Delete all</Button> */}
+            <Button 
+            onClick={()=>dispatch(deleteall())}
+             variant="outline-danger">Delete all</Button>
             < Modal1 />
         </Container>
     )

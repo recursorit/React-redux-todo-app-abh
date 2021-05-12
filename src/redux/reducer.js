@@ -13,7 +13,8 @@ const reducer = (state=todos,action) =>{
             newTodos = newTodos.filter(todo => todo.id != action.payload);
             return  newTodos;
         case DELETE_ALL:
-            return  [];    
+            newTodos = [];
+            return  newTodos;    
         case UPDATE_TODO:
             newTodos = [...state];
             let index = -1;
