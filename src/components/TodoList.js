@@ -16,7 +16,7 @@ const TodoList = () => {
                     return <Todo key={todo.id} todo={todo} />
                 })
             }
-            <Button 
+            <Button className="my-3"
             onClick={()=>dispatch(deleteall())}
              variant="outline-danger">Delete all</Button>
             < Modal1 />
